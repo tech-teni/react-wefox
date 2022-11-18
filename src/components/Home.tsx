@@ -4,7 +4,7 @@ import axios from "axios";
 import dataTypes from "../data";
 import defaultImage from "./landscape.jpg";
 
-import { useLocation, Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const Home = () => {
   const params = useParams();
@@ -16,15 +16,19 @@ const Home = () => {
   const navigate = useNavigate();
   const [title, setTitle] = useState<string>();
   const [content, setContent] = useState<string>();
-  const [image, setImage] = useState<any>();
+  const [image, setImage] = useState<string>();
   const [deleteMessage, setDeleteMessage] = useState<boolean>(false);
 
   //---- submitting item input function
 
   const handleImageChange = async (e: any) => {
+    // converted the file BLOB to string and i realised if sent to backend,it will pop up 'it is programatically set to the empty string from backend end '
     const currentImage = e.target.files[0];
+    const reader: any = new FileReader();
+    reader.onchange = e = reader.readAsDataURL(currentImage);
     console.log(currentImage);
-    console.log(URL.createObjectURL(currentImage));
+
+    // making sure the image remain empty string
     setImage(image);
     return;
   };
@@ -140,6 +144,7 @@ const Home = () => {
               name="image_url"
               id=""
               value={image}
+              accept="image/*"
               onChange={handleImageChange}
             />
 

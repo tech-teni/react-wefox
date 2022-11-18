@@ -9,8 +9,8 @@ const Header = ({ imgSource }: myProps) => {
   return (
     <header>
       <div className="container header-container">
-        {/* <img src={imgSource} alt="" /> */}
-        <h1 className="logo"> wefox</h1>
+        <img src={imgSource} alt="" />
+        {/* <h1 className="logo"> wefox</h1> */}
         <div className="user-info">
           <Link to="/">
             <h5>Dashboard </h5>

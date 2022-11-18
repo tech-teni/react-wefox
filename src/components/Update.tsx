@@ -83,14 +83,18 @@ const Update = () => {
             placeholder="Title"
             name="title"
             value={title}
-            onChange={(e: any) => setTitle(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setTitle(e.target.value)
+            }
           />
           <input
             type="text"
             placeholder="Content"
             name="content"
             value={content}
-            onChange={(e: any) => setContent(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setContent(e.target.value)
+            }
           />
           <input
             type="number"
@@ -98,7 +102,9 @@ const Update = () => {
             placeholder="Latitude"
             id=""
             value={lat}
-            onChange={(e: any) => setLat(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setLat(e.target.value)
+            }
           />
           <input
             type="number"
@@ -106,7 +112,9 @@ const Update = () => {
             id=""
             placeholder="Longitude"
             value={long}
-            onChange={(e: any) => setLong(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setLong(e.target.value)
+            }
           />
 
           <input
@@ -114,7 +122,9 @@ const Update = () => {
             name="image"
             id=""
             value={image}
-            onChange={(e: any) => setImage(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setImage(e.target.value)
+            }
           />
 
           <input type="submit" value="Update" className="show-button" />

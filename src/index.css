@@ -38,6 +38,7 @@ header .header-container {
 header img {
   width: 100px;
   height: auto;
+  padding-top: 5px;
   max-width: 100%;
 }
 header h5 {
