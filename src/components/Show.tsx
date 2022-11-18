@@ -51,15 +51,15 @@ const Show = () => {
               <span>
                 <b>Lat: </b>
               </span>
-              <span>{minData?.lat}</span>
+              <span> {minData?.lat}</span>
             </div>
 
             <div className="">
               {" "}
               <span>
-                <b>Long:</b>
+                <b>Long: </b>
               </span>
-              <span>{minData?.long}</span>
+              <span> {minData?.long}</span>
             </div>
           </div>
           {/* MAP */}

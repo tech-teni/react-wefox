@@ -1,5 +1,5 @@
 :root {
-  --primary: #554c99;
+  --primary: #501e96;
   --white: #ffffff;
   --main-size: 0.7em;
   --headings: 20px;
@@ -30,6 +30,11 @@ header .header-container {
   align-items: center;
 }
 
+.logo {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-family: sans-serif;
+}
 header img {
   width: 100px;
   height: auto;
