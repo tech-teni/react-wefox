@@ -49,7 +49,7 @@ const Show = () => {
             <div className="">
               {" "}
               <span>
-                <b>Lat:</b>
+                <b>Lat: </b>
               </span>
               <span>{minData?.lat}</span>
             </div>
@@ -57,9 +57,9 @@ const Show = () => {
             <div className="">
               {" "}
               <span>
-                <b>Lat:</b>
+                <b>Long:</b>
               </span>
-              <span>{minData?.lat}</span>
+              <span>{minData?.long}</span>
             </div>
           </div>
           {/* MAP */}
