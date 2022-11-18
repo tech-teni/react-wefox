@@ -152,21 +152,26 @@ table img {
   padding-top: 30px;
   padding-bottom: 30px;
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 40% 55%;
 }
 
 .show-section h3 {
   font-size: 17px;
   font-weight: bold;
+  text-transform: capitalize;
 }
 .show-section p {
   font-size: 13px;
 }
 
 .show-section img {
-  width: 150px;
+  width: 100%;
+  max-width: 100%;
   margin-right: 20px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
+}
+.show-section .content-info {
+  margin-left: 35px;
 }
 
 .long-lat {
@@ -277,6 +282,9 @@ input {
     width: 100%;
     margin: 0px;
     margin-bottom: 20px;
+  }
+  .show-section .content-info {
+    margin-left: 0px;
   }
 }
 
