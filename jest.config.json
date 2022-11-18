@@ -1,0 +1,6 @@
+{
+  "name": "wefox",
+  "jest": {
+    "verbose": true
+  }
+}

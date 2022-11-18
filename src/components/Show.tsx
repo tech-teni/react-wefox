@@ -1,40 +1,74 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
-import Footer from "./Footer";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useParams } from "react-router-dom";
+import dataTypes from "../data";
+import axios from "axios";
+import defaultImage from "./landscape.jpg";
+import GoogleMap from "./GoogleMap";
 
 const Show = () => {
+  const param = useParams();
+  const [minData, setMiniData] = useState<dataTypes>();
+  // const [lat, setLat] = useState<string>();
+  // const [long, setLong] = useState<string>();
+
+  const fetchData = async () => {
+    const res = await axios.get(
+      `http://localhost:3000/api/v1/posts/${param.id}`
+    );
+
+    setMiniData(res.data);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  console.log(minData);
   return (
-    <div className="">
-      <Header />
-      <button>
-        <Link to="/">Back</Link>
-      </button>
-      <section className="show-section">
-        <img src="./images/wefox.png" alt="" />
+    <div className="container">
+      <Header imgSource={"../images/whatt.jpeg"} />
+      <Link to="/">
+        <button
+          className="update-button container"
+          style={{ marginTop: "50px", width: "80px" }}
+        >
+          Back
+        </button>
+      </Link>
+
+      <section className="show-section container">
+        <img
+          src={minData?.image_url ? minData.image_url : defaultImage}
+          alt=""
+        />
         <div className="content-info">
-          <h3>Madrid</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Porro qui eaque molestiae amet totam
-            architecto quod iste quas cupiditate ipsa obcaecati ducimus id
-            libero, hic nostrum sapiente commodi ipsum eum?
-          </p>
+          <h3>{minData?.title}</h3>
+          <p>{minData?.content}</p>
+          <div className="long-lat">
+            <div className="">
+              {" "}
+              <span>
+                <b>Lat:</b>
+              </span>
+              <span>{minData?.lat}</span>
+            </div>
+
+            <div className="">
+              {" "}
+              <span>
+                <b>Lat:</b>
+              </span>
+              <span>{minData?.lat}</span>
+            </div>
+          </div>
           {/* MAP */}
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4793853.39626353!2d8.748932882837021!3d8.618925421769486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sng!4v1668555769373!5m2!1sen!2sng"
-            width="600"
-            height="450"
-            style={{ border: 0 }}
-            allowFullScreen={undefined}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+          <GoogleMap
+            lat={minData?.lat ? parseInt(minData?.lat) : 0}
+            long={minData?.long ? parseInt(minData?.long) : 0}
+          />
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

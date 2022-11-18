@@ -7,6 +7,7 @@
 
 /* body */
 body {
+  font-family: Work sans;
   color: #333333;
   margin: 0;
   background-color: #e5e5e5;
@@ -16,15 +17,17 @@ body {
 header {
   background-color: var(--primary);
   margin: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   height: 45px;
   position: fixed;
   top: 0%;
   left: 0%;
   width: 100%;
   z-index: 3;
+}
+header .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header img {
@@ -34,6 +37,7 @@ header img {
 }
 header h5 {
   font-size: 0.7em;
+  font-weight: bold;
   color: #ffffff;
   margin-bottom: 0px;
   text-decoration: underline;
@@ -41,7 +45,7 @@ header h5 {
 
 header select {
   color: rgb(130, 130, 130);
-  width: 50px;
+  width: 55px;
   font-size: var(--main-size);
 }
 
@@ -66,7 +70,7 @@ section {
   margin-top: 55px;
 }
 
-/* Home page */
+/******** Home page *********************************/
 .list-section form {
   background-color: white;
   padding: 30px 10px;
@@ -74,25 +78,222 @@ section {
 .list-section form h3 {
   font-size: var(--headings);
 }
+.message {
+  text-align: center;
+  color: rgb(9, 218, 9);
+  font-style: italic;
+  margin-bottom: 0px;
+}
+.delete {
+  text-align: center;
+  color: rgb(202, 9, 9);
+  font-style: italic;
+  margin-bottom: 0px;
+}
 
 .list-section table {
   background-color: white;
+  margin-top: 30px;
 }
 
 table img {
   width: 60px;
-  /* height: 50px; */
 }
 
-/* show page */
+.list-section form input[type="text"] {
+  background-color: #e5e5e5;
+  border: 1px solid #e5e5e5;
+  margin-right: 10px;
+  border-radius: 2px;
+  font-size: 15px;
+  padding-left: 10px;
+}
+.input-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.input-container input {
+  background-color: #e5e5e5;
+  border: 1px solid #e5e5e5;
+  margin-right: 10px;
+  border-radius: 2px;
+  font-size: 15px;
+  padding-left: 10px;
+  margin-bottom: 12px;
+}
+
+.list-section form input[type="file"] {
+  font-size: var(--main-size);
+  max-width: 170px;
+  font-style: italic;
+  margin-right: 5px;
+  background-color: #ffffff;
+  border: none;
+  padding-left: 0px !important;
+}
+
+.list-section form input[type="file"]:hover::before {
+  border-color: black;
+}
+.list-section form input[type="submit"] {
+  border: none;
+  font-size: 12px;
+  background-color: var(--primary);
+  color: #ffffff;
+  width: 70px;
+  height: 25px;
+  border-radius: 5px;
+}
+/********* show page ****************************/
 .show-section {
-  display: flex;
-  margin-top: 40px;
+  margin-top: 20px;
+  background: #ffffff;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.show-section h3 {
+  font-size: 17px;
+  font-weight: bold;
+}
+.show-section p {
+  font-size: 13px;
 }
 
 .show-section img {
-  width: 130px;
-  height: 130px;
+  width: 150px;
   margin-right: 20px;
   margin-left: 20px;
+}
+
+.long-lat {
+  display: flex;
+  margin-bottom: 20px;
+}
+.long-lat div {
+  margin-right: 20px;
+}
+th {
+  font-size: 14px !important;
+}
+
+td {
+  font-size: 12px;
+}
+
+.delete-button,
+.show-button,
+.update-button {
+  border: none;
+  color: white !important;
+  margin-right: 5px;
+  border-radius: 5px;
+  height: 25px;
+  width: 50px;
+}
+
+.delete-button {
+  color: rgb(199, 8, 8) !important;
+  border: 1px solid rgb(199, 8, 8);
+}
+
+.show-button {
+  background-color: var(--primary);
+}
+
+.update-button {
+  border: 1px solid var(--primary);
+  color: var(--primary) !important;
+}
+
+/************* Update input******************/
+.update-section h3 {
+  margin-bottom: 10px;
+}
+
+.update-input {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.update-section input {
+  background-color: #e5e5e5;
+  border: 1px solid #e5e5e5;
+  margin-right: 10px;
+  border-radius: 2px;
+  font-size: 15px;
+  padding-left: 10px;
+  margin-bottom: 12px;
+}
+.update-section input[type="file"] {
+  background-color: #ffffff;
+  border: none;
+  padding: 0px;
+}
+.update-section input[type="submit"] {
+  background-color: var(--primary);
+  color: #ffffff;
+  width: 80px;
+  border: none;
+}
+.update-form {
+  background-color: #ffffff;
+  margin-top: 15px;
+  padding: 20px 10px;
+  /* display: grid; */
+  grid-template-rows: 1fr 1fr;
+}
+
+.update-form input[type="text"] {
+  background-color: #e5e5e5;
+  border: 1px solid #e5e5e5;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+.update-input img {
+  max-width: 100%;
+  width: 15%;
+  margin-right: 20px;
+}
+
+input {
+  height: 30px;
+  font-size: 12px !important;
+}
+
+/****Media Queries *****TABLET PHONE*********************************/
+@media screen and (max-width: 1028px) {
+  .input-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .show-section {
+    grid-template-columns: 100%;
+  }
+  .show-section img {
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 20px;
+  }
+}
+
+/****Media Queries *****MOBILE PHONE*********************************/
+@media screen and (max-width: 500px) {
+  .input-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .show-section {
+    grid-template-columns: 100%;
+  }
+  .show-section img {
+    margin: 0px;
+    margin-bottom: 20px;
+  }
+  .update-input {
+    grid-template-columns: 1fr;
+  }
 }
